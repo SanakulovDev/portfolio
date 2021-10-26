@@ -12,23 +12,19 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
+
         'mailer' => [
            'class' => 'yii\swiftmailer\Mailer',
            'transport' => [
                'class' => 'Swift_SmtpTransport',
              'host' => 'smtp.gmail.com',  // e.g. smtp.mandrillapp.com or smtp.gmail.com
              'username' => 'murodsanakulov52@gmail.com',
-             'password' => 'duiknjltfwvvnvio',
+             'password' => 'rftlrbhznkbavbxt',
              'port' => '587', // Port 25 is a very common port too
              'encryption' => 'tls', // It is often used, check your provider or mail server specs
-
-             'plugins' => [
-               [
-                   'class' => 'Swift_Plugins_ThrottlerPlugin',
-                   'constructArgs' => [20],
-               ],
-           ],
        ],
+
+
    ],
    'request' => [
     'csrfParam' => '_csrf-frontend',

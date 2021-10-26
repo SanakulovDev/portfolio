@@ -51,16 +51,21 @@ class Emails extends \yii\db\ActiveRecord
         ];
     }
 
-    protected function sendEmail($contact)
+    public function email()
+    {
+
+    }
+
+    public function sendEmail($user)
     {
         return Yii::$app
         ->mailer
         ->compose(
             ['html' => 'emailVerify-html', 'text' => 'emailVerify-text'],
-            ['user' => $contact]
+            ['emails' => $user]
         )
-        ->setTo($receiver_email)
-        ->setFrom([Yii::$app->params['senderEmail'] => Yii::$app->params['senderName']])
+        ->setFrom([Yii::$app->params['supportEmail'] => ' Anvar Sanakulov'])
+        ->setTo($this->receiver_email)
         ->setSubject($this->subject)
         ->setTextBody($this->content)
         ->send();

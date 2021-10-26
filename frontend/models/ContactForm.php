@@ -23,10 +23,8 @@ class ContactForm extends Model
     public function rules()
     {
         return [
-            // name, email, subject and body are required
-            [['receiver_name', 'receiver_email', 'subject', 'content'], 'required'],
-            // email has to be a valid email address
             ['receiver_email', 'email'],
+            [['receiver_name', 'subject','content'],'string', 'maxlength'=>255],
         ];
     }
 

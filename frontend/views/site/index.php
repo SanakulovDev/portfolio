@@ -42,19 +42,19 @@ use yii\widgets\ActiveForm;
       <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
       <div class="fields">
          <div class="field name">
-            <?= $form->field($model, 'receiver_name')->textInput() ?>
+            <?= $form->field($email, 'receiver_name')->textInput() ?>
         </div>
 
         <div class="field email">
-            <?= $form->field($model, 'receiver_email')->textInput() ?>
+            <?= $form->field($email, 'receiver_email')->textInput() ?>
         </div>
     </div> 
     <div class="field">
-        <?= $form->field($model, 'subject')->textInput() ?>
+        <?= $form->field($email, 'subject')->textInput() ?>
     </div>
 
     <div class="field textarea">
-        <?= $form->field($model, 'content')->textarea() ?>
+        <?= $form->field($email, 'content')->textarea() ?>
     </div>
     <div class="button">
       <button type="submit">Send messege</button>

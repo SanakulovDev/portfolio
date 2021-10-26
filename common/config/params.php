@@ -8,5 +8,5 @@ return [
     'supportName' => "Sherali Jo'rayev",
     'address'=>"Tashkent Uzbekistan",
     'user.passwordResetTokenExpire' => 3600,
-    'user.passwordMinLength' => 8,
+    'user.passwordMinLength' => 4,
 ];

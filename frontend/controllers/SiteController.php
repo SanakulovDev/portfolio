@@ -15,7 +15,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
-use common\models\Emails;
+use frontend\models\Emails;
 
 /**
  * Site controller
@@ -76,17 +76,14 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $email = new Emails();
+        $email = new ContactForm();
 
         if ($email->load(Yii::$app->request->post())) {
-            
-            if ($email->save() && $email->sendEmail($email)) {
 
-            } else {
-                Yii::$app->session->setFlash('error', 'There was an error sending your message.');
+            if ($email->contact() ) {
+                return $this->refresh();
             }
 
-            return $this->refresh();
         }
         return $this->render('index', [
             'email'=>$email

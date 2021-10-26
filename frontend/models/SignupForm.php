@@ -59,7 +59,6 @@ class SignupForm extends Model
 
         return $user->save() && $this->sendEmail($user);
     }
-    public function 
 
     /**
      * Sends confirmation email to user

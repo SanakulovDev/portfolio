@@ -4,7 +4,7 @@ namespace frontend\models;
 
 use Yii;
 use yii\base\Model;
-use common\models\Emails;
+use frontend\models\Emails;
 
 /**
  * ContactForm is the model behind the contact form.
@@ -23,8 +23,8 @@ class ContactForm extends Model
     public function rules()
     {
         return [
-            ['receiver_email', 'email'],
-            [['receiver_name', 'subject','content'],'string', 'maxlength'=>255],
+            [['receiver_email'],'string'],
+            [['receiver_name', 'subject','content'],'string', 'max'=>255],
         ];
     }
 
@@ -44,23 +44,20 @@ class ContactForm extends Model
         $email->receiver_email = $this->receiver_email;
         $email->subject = $this->subject;
         $email->content = $this->content;
-        if ($this->sendEmail($email)&&$email->save()) {
-            return  $email;
+        if ($this->sendEmail($email) && $email->save()) {
+            return  true;
         }
         return false;
     }
-    /**
-     * Sends an email to the specified email address using the information collected by this model.
-     *
-     * @param string $email the target email address
-     * @return bool whether the email was sent
-     */
-    public function sendEmail($email)
+
+    protected function sendEmail($email)
     {
-        return Yii::$app->mailer->compose()
-        ->setTo($receiver_email)
-        ->setFrom([Yii::$app->params['senderEmail'] => Yii::$app->params['senderName']])
-        ->setReplyTo([$this->receiver_email => $this->receiver_name])
+        return Yii::$app->mailer->compose(
+            ['html' => 'emailVerify-html', 'text' => 'emailVerify-text'],
+            ['user' => $email]
+        )
+        ->setTo($this->receiver_email)
+        ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->params['senderName']])
         ->setSubject($this->subject)
         ->setTextBody($this->content)
         ->send();

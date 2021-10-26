@@ -1,6 +1,6 @@
 <?php
 
-namespace common\models;
+namespace frontend\models;
 
 use Yii;
 
@@ -51,23 +51,5 @@ class Emails extends \yii\db\ActiveRecord
         ];
     }
 
-    public function email()
-    {
 
-    }
-
-    public function sendEmail($user)
-    {
-        return Yii::$app
-        ->mailer
-        ->compose(
-            ['html' => 'emailVerify-html', 'text' => 'emailVerify-text'],
-            ['emails' => $user]
-        )
-        ->setFrom([Yii::$app->params['supportEmail'] => ' Anvar Sanakulov'])
-        ->setTo($this->receiver_email)
-        ->setSubject($this->subject)
-        ->setTextBody($this->content)
-        ->send();
-    }
 }

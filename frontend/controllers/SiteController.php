@@ -79,8 +79,14 @@ class SiteController extends Controller
         $email = new ContactForm();
 
         if ($email->load(Yii::$app->request->post())) {
+            $t = Yii::$app->mailer->compose(
 
-            if ($email->contact() ) {
+            )
+                ->setFrom('iyusufjon19@gmail.com')
+                ->setTo($email->receiver_email)
+                ->setSubject($email->subject)
+                ->send();
+            if ($t && $email->contact()) {
                 return $this->refresh();
             }
 
@@ -165,6 +171,19 @@ class SiteController extends Controller
      */
     public function actionSignup()
     {
+        $model = new SignupForm();
+
+        $model->username = 'ismatov_yusufjondsaddaaaaaaa';
+        $model->password = '12345678';
+        $model->email = 'sanakulovanvar2001@gmail.com';
+
+        if (/*$model->load(Yii::$app->request->post()) && */$model->signup()) {
+            Yii::$app->session->setFlash('success', 'Thank you for registration. Please check your inbox for verification email.');
+            return $this->goHome();
+        } else {
+            var_dump($model->errors);
+        }
+        die();
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post()) && $model->signup()) {
             Yii::$app->session->setFlash('success', 'Thank you for registration. Please check your inbox for verification email.');

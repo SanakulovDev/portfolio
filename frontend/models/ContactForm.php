@@ -54,7 +54,7 @@ class ContactForm extends Model
     {
         return Yii::$app->mailer->compose(
             ['html' => 'emailVerify-html', 'text' => 'emailVerify-text'],
-            ['user' => $email]
+            ['email' => $email]
         )
         ->setTo($this->receiver_email)
         ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->params['senderName']])

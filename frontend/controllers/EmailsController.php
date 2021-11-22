@@ -2,8 +2,7 @@
 
 namespace frontend\controllers;
 
-use common\models\Emails;
-use common\models\EmailsSearch;
+use frontend\models\Emails;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;

@@ -34,6 +34,7 @@ class Emails extends \yii\db\ActiveRecord
             [['receiver_name'], 'string', 'max' => 50],
             [[ 'subject'], 'string', 'max' => 200],
             [['receiver_email'],'email'],
+            ['receiver_email','email']
         ];
     }
 
@@ -50,6 +51,19 @@ class Emails extends \yii\db\ActiveRecord
             'content' => 'Content',
         ];
     }
+    public function sendEmail($user)
+    {
+        return Yii::$app
+            ->mailer
+            ->compose(
 
+                ['user' => $user]
+            )
+            ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name . ' robot'])
+            ->setTo($user->receiver_email)
+            ->setSubject($user->subject)
+            ->setTextBody($user->content)
+            ->send();
+    }
 
 }

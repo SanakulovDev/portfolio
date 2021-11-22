@@ -76,23 +76,17 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $email = new ContactForm();
+        $email = new Emails();
 
         if ($email->load(Yii::$app->request->post())) {
-            $t = Yii::$app->mailer->compose(
 
-            )
-                ->setFrom('iyusufjon19@gmail.com')
-                ->setTo($email->receiver_email)
-                ->setSubject($email->subject)
-                ->send();
-            if ($t && $email->contact()) {
-                return $this->refresh();
+            if ($email->save() && $email->sendEmail($email)){
+                var_dump(Yii::$app->request->post());
+                die();
             }
-
         }
         return $this->render('index', [
-            'email'=>$email
+            'email' => $email
         ]);
     }
 
@@ -177,7 +171,7 @@ class SiteController extends Controller
         $model->password = '12345678';
         $model->email = 'sanakulovanvar2001@gmail.com';
 
-        if (/*$model->load(Yii::$app->request->post()) && */$model->signup()) {
+        if (/*$model->load(Yii::$app->request->post()) && */ $model->signup()) {
             Yii::$app->session->setFlash('success', 'Thank you for registration. Please check your inbox for verification email.');
             return $this->goHome();
         } else {
@@ -248,8 +242,8 @@ class SiteController extends Controller
      * Verify email address
      *
      * @param string $token
-     * @throws BadRequestHttpException
      * @return yii\web\Response
+     * @throws BadRequestHttpException
      */
     public function actionVerifyEmail($token)
     {
@@ -294,5 +288,5 @@ class SiteController extends Controller
         return $this->render("footer");
     }
 
-   
+
 }

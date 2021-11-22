@@ -6,11 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="/css/main.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" ></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
+
     <title>My Portfolio</title>
 </head>
 <body>
@@ -60,12 +56,12 @@
             </h2>
             <div class="about-content">
                 <div class="column left">
-                    <img src="images/1 (3).jpg" alt="">
+                    <img src="/images/1 (3).jpg" alt="">
                 </div>
                 <div class="column right">
                     <div class="text">I'm Sherali and I'm a <span class="typing-2"></span></div>
                     <p>Lorem  ipsum dolor sit amet consectetur adipisicing elit. Rerum laudantium nisi neque esse! Dolorum, impedit? Soluta est ducimus excepturi explicabo consectetur aliquid ratione doloribus porro praesentium eaque? Omnis, incidunt explicabo! Sint numquam optio dolorem, pariatur tenetur eum unde, delectus eaque incidunt ipsa sapiente. Debitis, alias quis corporis maiores non excepturi natus nulla facilis praesentium, dolore nobis quasi incidunt atque unde!</p>
-                    <a href="#">Download CV</a>
+                    <a href="/download/rezume.docx">Download CV</a>
                 </div>
          
             </div>
@@ -172,7 +168,7 @@
                     <div class="carousel owl-carousel">
                         <div class="card">
                            <div class="box">
-                            <img src="images/1 (4).jpg" alt="">
+                            <img src="/images/1 (4).jpg" alt="">
                             <div class="text">Someone name</div>
                             <p>Lorem ipsum dolor sit amet consectetur.</p>
                            </div>
@@ -182,7 +178,7 @@
                     
                         <div class="card">
                            <div class="box">
-                            <img src="images/1 (4).jpg" alt="">
+                            <img src="/images/1 (4).jpg" alt="">
                             <div class="text">Someone name</div>
                             <p>Lorem ipsum dolor sit amet consectetur.</p>
                            </div>
@@ -192,7 +188,7 @@
                    
                         <div class="card">
                            <div class="box">
-                            <img src="images/1 (4).jpg" alt="">
+                            <img src="/images/1 (4).jpg" alt="">
                             <div class="text">Someone name</div>
                             <p>Lorem ipsum dolor sit amet consectetur.</p>
                            </div>
@@ -202,7 +198,7 @@
                     
                         <div class="card">
                            <div class="box">
-                            <img src="images/1 (4).jpg" alt="">
+                            <img src="/images/1 (4).jpg" alt="">
                             <div class="text">Someone name</div>
                             <p>Lorem ipsum dolor sit amet consectetur.</p>
                            </div>
@@ -212,7 +208,7 @@
                     
                         <div class="card">
                            <div class="box">
-                            <img src="images/1 (4).jpg" alt="">
+                            <img src="/images/1 (4).jpg" alt="">
                             <div class="text">Someone name</div>
                             <p>Lorem ipsum dolor sit amet consectetur.</p>
                            </div>
@@ -226,7 +222,7 @@
 
         <?=$content?>
 
-        </section>
+
 
 
       <!-- footer section start -->
@@ -234,8 +230,12 @@
            <span>Created By <a href="#">CodingUZB</a> | <span class="far fa-copyright"> 2021 All rights reserved.</span> </span>
        </footer>
 
-
-    <script src="js/main.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
+    <script src="/js/main.js"></script>
 
 </body>
 </html>

@@ -9,7 +9,7 @@ use yii\helpers\Html;
 $verifyLink = 'https://github.com/Sanakulov-dev';
 ?>
 <div class="verify-email">
-    <p>Hello <?= Html::encode($user->username) ?>,</p>
+    <p>Hello <?= Html::encode($user->receiver_name) ?>,</p>
 
     <p>Follow the link below to verify your email:</p>
 

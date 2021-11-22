@@ -14,18 +14,17 @@ return [
     'components' => [
 
         'mailer' => [
-           'class' => 'yii\swiftmailer\Mailer',
-           'transport' => [
-               'class' => 'Swift_SmtpTransport',
-             'host' => 'smtp.gmail.com',  // e.g. smtp.mandrillapp.com or smtp.gmail.com
-             'username' => 'murodsanakulov52@gmail.com',
-             'password' => 'setkljzqyzywothe',
-             'port' => '587', // Port 25 is a very common port too
-             'encryption' => 'tls', // It is often used, check your provider or mail server specs
-       ],
-
-
-   ],
+            'class' => 'yii\swiftmailer\Mailer',
+            'useFileTransport' => false,
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.gmail.com',
+                'port' => '587',
+                'encryption' => 'tls',
+                'username' => 'murodsanakulov52@gmail.com',
+                'password' => 'qnnzlhgrthscoglf',
+            ],
+        ],
    'request' => [
     'csrfParam' => '_csrf-frontend',
     'baseUrl' => '',

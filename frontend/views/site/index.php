@@ -22,7 +22,7 @@ use frontend\models\Emails;
                         <i class="fas fa-user"></i>
                         <div class="info">
                             <div class="head">Name</div>
-                            <div class="sub-title">Sherali Jo'rayev</div>
+                            <div class="sub-title">Xakimov Sardor</div>
                         </div>
                     </div>
 
@@ -68,3 +68,9 @@ use frontend\models\Emails;
                 <?php ActiveForm::end(); ?>
             </div>
         </div>
+
+    </div>
+</section>
+<ul class="job-listings mb-5">
+
+ </ul>

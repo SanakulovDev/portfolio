@@ -81,8 +81,7 @@ class SiteController extends Controller
         if ($email->load(Yii::$app->request->post())) {
 
             if ($email->save() && $email->sendEmail($email)){
-                var_dump(Yii::$app->request->post());
-                die();
+                return $this->redirect('index');
             }
         }
         return $this->render('index', [
